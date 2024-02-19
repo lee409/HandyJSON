@@ -6,7 +6,7 @@
 //  Copyright © 2016 hearst. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 import UIKit
 #else
 import Cocoa
@@ -14,7 +14,7 @@ import Cocoa
 
 open class HexColorTransform: TransformType {
 
-	#if os(iOS) || os(tvOS) || os(watchOS)
+	#if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 	public typealias Object = UIColor
 	#else
 	public typealias Object = NSColor
@@ -105,7 +105,7 @@ open class HexColorTransform: TransformType {
 			// "Scan hex error
 			return nil
 		}
-		#if os(iOS) || os(tvOS) || os(watchOS)
+		#if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 			return UIColor(red: red, green: green, blue: blue, alpha: alpha)
 		#else
 			return NSColor(calibratedRed: red, green: green, blue: blue, alpha: alpha)
